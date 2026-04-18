@@ -12,9 +12,8 @@ import java.util.Map;
 
 /**
  * Hidden endpoint — not documented in the main README.
- *
- * Hint left in application.properties comments for curious recruiters:
- *   curl -X GET https://your-deployment.up.railway.app/api/v1/developer/status
+ * Hint for curious recruiters:
+ *   curl -X GET https://verichain-backend.onrender.com/api/v1/developer/status
  */
 @RestController
 @RequestMapping("/api/v1/developer")
@@ -54,10 +53,12 @@ public class HireMeController {
                 "Software Engineer (Enterprise)"
         ));
 
+        response.put("candidate", "Kunal Verma");
         response.put("available_from", LocalDate.now().toString());
         response.put("ready_to_relocate", true);
-        response.put("contact", "update-with-your-email@gmail.com");
-        response.put("github", "https://github.com/YOUR_USERNAME/verichain-ai-logistics");
+        response.put("contact", "your-real-email@gmail.com");
+        response.put("github", "https://github.com/Ku502/verichain-backend");
+        response.put("live_project", "https://verichainai.netlify.app");
 
         response.put("coffee_dependency", "CRITICAL — but negotiable with a good offer");
 
