@@ -31,34 +31,35 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final JwtAuthFilter jwtAuthFilter;
     private final UserRepository userRepository;
 
     @Value("${app.cors.allowed-origins}")
     private String allowedOrigins;
 
+    public SecurityConfig(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http,
+                                                   JwtAuthFilter jwtAuthFilter) throws Exception {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .headers(headers -> headers
-                .frameOptions(HeadersConfigurer.FrameOptionsConfig::disable) // Required for H2 console
+                .frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)
             )
             .sessionManagement(session ->
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .authorizeHttpRequests(auth -> auth
-                // Public endpoints
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/v1/developer/**").permitAll()
                 .requestMatchers("/api/shipments/track/**").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 .requestMatchers("/actuator/health").permitAll()
-                // Everything else requires authentication
                 .anyRequest().authenticated()
             )
             .authenticationProvider(authenticationProvider())
