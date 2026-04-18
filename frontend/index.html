@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VeriChain AI: Zero-Trust Supply Routing</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="dashboard-container">
+
+    <header class="dashboard-header">
+      <div class="header-left">
+        <h1><i data-lucide="activity" class="icon"></i> VeriChain AI: Zero-Trust Supply Routing</h1>
+        <p>Live Supply Chain Tracking secured by Ethereum Blockchain</p>
+      </div>
+      <div class="header-right">
+        <span class="live-badge"><span class="pulse"></span> LIVE</span>
+      </div>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <i data-lucide="package" class="stat-icon"></i>
+        <div>
+          <p class="stat-label">Total Shipments</p>
+          <p class="stat-value" id="stat-total">—</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="truck" class="stat-icon"></i>
+        <div>
+          <p class="stat-label">In Transit</p>
+          <p class="stat-value" id="stat-transit">—</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="shield-check" class="stat-icon green"></i>
+        <div>
+          <p class="stat-label">Blockchain Verified</p>
+          <p class="stat-value" id="stat-chain">—</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="alert-triangle" class="stat-icon yellow"></i>
+        <div>
+          <p class="stat-label">High Risk</p>
+          <p class="stat-value" id="stat-risk">—</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="loading" class="loader">
+      <div class="spinner"></div>
+      <p>Connecting to Enterprise Backend...</p>
+    </div>
+
+    <div id="error-banner" class="error-banner" style="display:none;">
+      <i data-lucide="wifi-off" class="icon-small"></i>
+      Backend offline — showing demo data. Real backend:
+      <a href="https://verichain-backend.onrender.com" target="_blank">verichain-backend.onrender.com</a>
+    </div>
+
+    <div id="shipment-grid" class="shipment-grid"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
