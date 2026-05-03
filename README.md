@@ -19,7 +19,7 @@ Built this as a final year project to demonstrate enterprise-level backend archi
 - **AI Microservice:** Python 3, FastAPI
 - **Blockchain:** Solidity, Web3j, Ethereum Sepolia Testnet
 - **Frontend:** HTML, CSS, Vanilla JavaScript
-- **Deployment:** Docker on Render (backend), Netlify (frontend)
+- **Deployment:** Docker on Render (backend), Netlify (frontend).
 
 ## Live Links
 
