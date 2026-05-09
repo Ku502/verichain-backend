@@ -18,7 +18,7 @@ Built this as a final year project to demonstrate enterprise-level backend archi
 - **Database:** H2 (development), PostgreSQL (production), Spring Data JPA, Hibernate
 - **AI Microservice:** Python 3, FastAPI
 - **Blockchain:** Solidity, Web3j, Ethereum Sepolia Testnet
-- **Frontend:** HTML, CSS, Vanilla JavaScript
+- **Frontend:** HTML, CSS, Vanilla javascript.
 - **Deployment:** Docker on Render (backend), Netlify (frontend).
 
 ## Live Links
