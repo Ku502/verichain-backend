@@ -43,7 +43,7 @@ public class HireMeController {
                 "backend", "Java 17 + Spring Boot 3.2",
                 "ai_microservice", "Python 3 + FastAPI",
                 "blockchain", "Solidity + Web3j + Ethereum Sepolia",
-                "database", "H2 (dev) / PostgreSQL (prod)",
+                "database", "PostgreSQL (Clever Cloud)",
                 "frontend", "Vanilla JS / HTML / CSS deployed on Netlify"
         ));
 
